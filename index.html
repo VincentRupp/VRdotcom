@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>VincentRupp.com</title>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+		<script src="app.js"></script>
+		<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+		<link href="assets/vr_styles.css" rel="stylesheet">
+
+	</head>
+
+	<body ng-app="VRdotcom" ng-controller="MainCtrl">
+		<div class="container">
+			<div class="row"><h4><em>The Official Web Page of the Official Vincent Rupp</em></h4></div>
+
+			<div class="row"><img class="img-responsive center-block" src="assets/header_main.jpg"></div>
+			<nav>
+				<div class="row">
+					<a ng-repeat="link in navLinks" href="#/{{link.target}}" class="col-md-3 text-center glyphicon glyphicon-{{link.gicon}}" > {{link.name}}</a>
+    	  </div>
+    	</nav>
+    </div>
+		<div class="container">
+
+			<ui-view></ui-view>
+		
+		</div>
+		
+	<div class="ext-links text-center">
+		<a href="http://www.twitter.com/VincentRupp"><img src="assets/Twitter_Social_Icon_Rounded_Square_Color.svg" title="Link to my Twitter page" class="social-icon"></a>
+		<a href="http://www.instagram.com/mathandcats"><img src="assets/Instagram_logo_2016.svg" class="social-icon"></a>
+		<a href="http://github.com/VincentRupp"><img src="assets/github_logo.svg" class="social-icon"></a>
+		<a href="http://Linkedin.com/in/VincentRupp"><img src="assets/Linkedin_icon.svg" class="social-icon"></a>
+	</div>
+
+		<script type="text/ng-template" id="/home.html">
+			<div class="row">
+				<h3>Welcome to my website</h3>
+				<div class="col-md-10 col-md-offset-1">
+				 <p>I'm a former actuary and current math instructor learning to make single-page web apps with Angular, Node.js, and MongoDB while writing novels on the side.</p>
+				 <p>Additionally, I've been taking classes in calligraphy and CADD since September 2016, so I'm able to answer most of your questions about creating section views of parametrically-defined Uncial miniscule a's in SolidWorks.</p>
+				 <p>I'm also pretty into running (currently training for my 6th Portland Marathon), mostly up mountains.</p>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/ng-template" id="/angular.html">
+			<h3>Angular Projects</h3>
+			<div class="col-md-10 col-md-offset-1">
+				<p>These are listed in reverse chronological order of completion, roughly. (More sophisticated projects are nearer the top.)</p>
+				<p><a class="ngProject" href="http://vincentrupp.com">VincentRupp.com</a>, obviously a work in progress.</p>
+				<p><a class="ngProject" href="http://vincentrupp.com/ngProjects/numberGuesser1">Number guessing game</a></p>
+			</div>
+		</script>
+
+		<script type="text/ng-template" id="/writing.html">
+			<h3>Creative Writing</h3>
+			<div class="col-md-10 col-md-offset-1">
+				<table class="table table-striped">
+          <thead>
+              <tr>
+                  <td>Completion</td>
+                  <td>Title</td>
+                  <td>Description</td>
+              </tr>
+          </thead>
+        	<tr ng-repeat="text in texts">
+        		<td>{{text.completion}}</td>
+        		<td class="wg">
+        			<a ng-show="text.link" href="{{text.link}}">{{text.title}}</a>
+        			<span ng-hide="text.link">{{text.title}}</span>
+        		</td>
+        		<td>{{text.description}}</td>
+        	</tr>
+      	</table>
+			</div>
+		</script>
+
+		<script type="text/ng-template" id="/running.html">
+			<h3>Race Results</h3>
+			<p>Running has been a big part of my life for years. In 2012, I ran at least 5k (3.107mi) every single day, and it was a leap year. I don't enter races much anymore, but it's nice to have all my times in one place. All races are Portland-area unless otherwise noted.</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date</th>
+						<th>Distance</th>
+						<th>Time</th>
+						<th>Pace</th>
+					</tr>
+				</thead>
+				<tr ng-repeat="result in raceResults">
+					<td>{{ result.name}}</td>
+					<td>{{ result.date | date:'dd-MMM-yyyy' }}</td>
+					<td>{{ result.distance}}</td>
+					<td>{{ result.time}}</td>
+					<td>{{ result.pace}}</td>
+				</tr>
+			</table>
+		</script>
+
+	</body>
+</html>

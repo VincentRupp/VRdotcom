@@ -1,0 +1,74 @@
+/*coolors.co*/
+/*
+#E8D6CB A creamy white with a hint of pink
+#A1B5D8 A lovely pale blue, verging on violet
+#AD6A6C Red sandstone, newly exposed by a fault
+#5D2E46 Bricks made of merlot
+#C2D8B9 Cucumber hand creme
+*/
+body {
+	background-color:#C2D8B9;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 0px;
+  margin-top: 10px;
+  display: block;
+  border-radius: 0px;
+  font-size:1.2em;
+}
+nav a:visited, nav a:link {
+  color: #5D2E46;
+  font-weight:700;
+}
+nav a:hover, nav a:active {
+  color: #C2D8B9;
+  background-color: #5D2E46;
+  font-weight:800;
+  text-decoration:none;
+  border-radius:10px;
+}
+
+ext-links {
+	display: inline;
+	padding: 5px 10px;
+}
+
+.social-icon {
+	max-width:50px;
+	min-width:29px;
+	margin-right:14px;
+	margin-left:14px;
+}
+/*Other link styles*/
+a {
+  font-weight:700;
+}
+
+a:link, a:visited {
+  color: #5D2E46;
+}
+a:hover, a:active {
+  color: #AD6A6C;
+  text-decoration: none;
+}
+
+/*General */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wtf {
+	border:5px;
+	border-color:#AD6A6C;
+	border-radius:5px;
+  background-color:red;
+}
